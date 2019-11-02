@@ -53,6 +53,12 @@ INJECTED from /home/ivan/HACKDUKE/hackduke_app/android/app/src/debug/AndroidMani
 		INJECTED from /home/ivan/HACKDUKE/hackduke_app/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/ivan/HACKDUKE/hackduke_app/android/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/ivan/HACKDUKE/hackduke_app/android/app/src/main/AndroidManifest.xml:4:5-81
+MERGED from [:location] /home/ivan/HACKDUKE/hackduke_app/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-81
+MERGED from [:location] /home/ivan/HACKDUKE/hackduke_app/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from /home/ivan/HACKDUKE/hackduke_app/android/app/src/main/AndroidManifest.xml:4:22-79
 uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from /home/ivan/HACKDUKE/hackduke_app/android/app/src/main/AndroidManifest.xml:5:5-79
 MERGED from [:location] /home/ivan/HACKDUKE/hackduke_app/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-79
@@ -201,10 +207,6 @@ MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/ivan/.gradl
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/ivan/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/24b164186b5976b73632cb89c321566e/AndroidManifest.xml:24:5-67
 	android:name
 		ADDED from /home/ivan/HACKDUKE/hackduke_app/android/app/src/debug/AndroidManifest.xml:6:22-64
-uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from [:location] /home/ivan/HACKDUKE/hackduke_app/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-81
-	android:name
-		ADDED from [:location] /home/ivan/HACKDUKE/hackduke_app/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-78
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/ivan/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/24b164186b5976b73632cb89c321566e/AndroidManifest.xml:23:5-79
 	android:name
