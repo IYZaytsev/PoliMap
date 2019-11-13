@@ -6,7 +6,9 @@ INJECTED from /home/ivan/HACKDUKE/hackduke_app/android/app/src/main/AndroidManif
 INJECTED from /home/ivan/HACKDUKE/hackduke_app/android/app/src/main/AndroidManifest.xml:2:1-37:12
 MERGED from /home/ivan/HACKDUKE/hackduke_app/android/app/src/main/AndroidManifest.xml:2:1-37:12
 MERGED from [:location] /home/ivan/HACKDUKE/hackduke_app/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-10:12
+MERGED from [:sqflite] /home/ivan/HACKDUKE/hackduke_app/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:google_maps_flutter] /home/ivan/HACKDUKE/hackduke_app/build/google_maps_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider] /home/ivan/HACKDUKE/hackduke_app/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-location:16.0.0] /home/ivan/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/e1f7aa3b9a225345fae25c2b9b188ad8/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/ivan/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/24b164186b5976b73632cb89c321566e/AndroidManifest.xml:17:1-38:12
 MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/ivan/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/ec2add64f346c58e5862d65af42e874d/AndroidManifest.xml:17:1-29:12
@@ -133,8 +135,12 @@ INJECTED from /home/ivan/HACKDUKE/hackduke_app/android/app/src/main/AndroidManif
 INJECTED from /home/ivan/HACKDUKE/hackduke_app/android/app/src/main/AndroidManifest.xml
 MERGED from [:location] /home/ivan/HACKDUKE/hackduke_app/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:location] /home/ivan/HACKDUKE/hackduke_app/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:sqflite] /home/ivan/HACKDUKE/hackduke_app/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:sqflite] /home/ivan/HACKDUKE/hackduke_app/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:google_maps_flutter] /home/ivan/HACKDUKE/hackduke_app/build/google_maps_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:google_maps_flutter] /home/ivan/HACKDUKE/hackduke_app/build/google_maps_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /home/ivan/HACKDUKE/hackduke_app/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /home/ivan/HACKDUKE/hackduke_app/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-location:16.0.0] /home/ivan/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/e1f7aa3b9a225345fae25c2b9b188ad8/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-location:16.0.0] /home/ivan/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/e1f7aa3b9a225345fae25c2b9b188ad8/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/ivan/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/24b164186b5976b73632cb89c321566e/AndroidManifest.xml:20:5-44
