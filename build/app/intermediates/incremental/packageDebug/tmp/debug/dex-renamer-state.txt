@@ -1,4 +1,0 @@
-#Wed Nov 13 16:27:07 EST 2019
-base.0=/home/ivan/HACKDUKE/hackduke_app/build/app/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex
