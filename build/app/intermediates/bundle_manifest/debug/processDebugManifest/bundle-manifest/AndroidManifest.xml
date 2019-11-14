@@ -34,7 +34,7 @@
         android:label="map_based_app" >
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDNxQdRHy1siKfLAniGq5F6GNuk2hBNxsI" />
+            android:value="AIzaSyAt8yWaYtPkCcRo8sJtcTaIOUWJY_UcSeY" />
 
         <activity
             android:name="com.example.hackduke_app.MainActivity"
