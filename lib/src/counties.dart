@@ -15,45 +15,45 @@ part 'counties.g.dart';
 class Geometry{
 
   Geometry({
-    this.type,
     this.coordinates,
+    this.type,
   });
     factory Geometry.fromJson(Map<String, dynamic> json) =>
     _$GeometryFromJson(json);
     Map<String, dynamic> toJson() => _$GeometryToJson(this);
 
 
-    final String type;
     final List<List<double>> coordinates;
+    final String type;
 
 }
 @JsonSerializable()
 class Properties{
 
      Properties({
-    this.name,
+    this.county,
   });
     factory Properties.fromJson(Map<String, dynamic> json) =>
     _$PropertiesFromJson(json);
     Map<String, dynamic> toJson() => _$PropertiesToJson(this);
-    final String name;
+    final String county;
 
 }
 @JsonSerializable()
 class Feature{
 
     Feature({
-    this.type,
     this.geometry,
     this.properties,
+    this.type,
   });
     factory Feature.fromJson(Map<String, dynamic> json) =>
     _$FeatureFromJson(json);
     Map<String, dynamic> toJson() => _$FeatureToJson(this);
     
-    final String type;
     final Geometry geometry;
     final Properties properties;
+    final String type;
 }
 
 @JsonSerializable()

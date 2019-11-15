@@ -21,11 +21,11 @@ Map<String, dynamic> _$GeometryToJson(Geometry instance) => <String, dynamic>{
     };
 
 Properties _$PropertiesFromJson(Map<String, dynamic> json) {
-  return Properties(name: json['name'] as String);
+  return Properties(county: json['county'] as String);
 }
 
 Map<String, dynamic> _$PropertiesToJson(Properties instance) =>
-    <String, dynamic>{'name': instance.name};
+    <String, dynamic>{'county': instance.county};
 
 Feature _$FeatureFromJson(Map<String, dynamic> json) {
   return Feature(
