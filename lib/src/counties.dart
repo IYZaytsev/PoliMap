@@ -57,15 +57,17 @@ class Locations {
 }
 
 class Counties{
-
   Future<String> loadMapAsset() async {
   return await rootBundle.loadString('assets/counties.json');
   }
 
+  Locations results;
+
   getMapmarkers()async{
   String stringJson = await loadMapAsset();
   var jsonData = json.decode(stringJson);
-  print(jsonData);
+  results = new Locations.fromJson(jsonData);
+  print(results.counties[0].countyName);
   }
 
 }
