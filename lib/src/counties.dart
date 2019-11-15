@@ -1,3 +1,4 @@
+
 import 'dart:convert';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:ui';
@@ -11,76 +12,62 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'counties.g.dart';
 
-@JsonSerializable()
-class Geometry{
 
-  Geometry({
-    this.type,
+@JsonSerializable()
+class LatLng {
+  LatLng({
+    this.lat,
+    this.lng,
+  });
+
+  factory LatLng.fromJson(Map<String, dynamic> json) => $LatLngFromJson(json);
+  Map<String, dynamic> toJson() => $LatLngToJson(this);
+
+  final double lat;
+  final double lng;
+}
+
+@JsonSerializable()
+class County {
+  County({
+    this.countyName,
     this.coordinates,
   });
-    factory Geometry.fromJson(Map<String, dynamic> json) =>
-    _$GeometryFromJson(json);
-    Map<String, dynamic> toJson() => _$GeometryToJson(this);
 
+  factory County.fromJson(Map<String, dynamic> json) => $CountyFromJson(json);
+  Map<String, dynamic> toJson() => $CountyToJson(this);
 
-    final String type;
-    final List<List<double>> coordinates;
-
+  final String countyName;
+  final List<LatLng> coordinates;
 }
-@JsonSerializable()
-class Properties{
 
-     Properties({
-    this.name,
+
+@JsonSerializable()
+class Locations {
+  Locations({
+    this.counties
   });
-    factory Properties.fromJson(Map<String, dynamic> json) =>
-    _$PropertiesFromJson(json);
-    Map<String, dynamic> toJson() => _$PropertiesToJson(this);
-    final String name;
 
-}
-@JsonSerializable()
-class Feature{
+  factory Locations.fromJson(Map<String, dynamic> json) =>
+      $LocationsFromJson(json);
+  Map<String, dynamic> toJson() => $LocationsToJson(this);
 
-    Feature({
-    this.type,
-    this.geometry,
-    this.properties,
-  });
-    factory Feature.fromJson(Map<String, dynamic> json) =>
-    _$FeatureFromJson(json);
-    Map<String, dynamic> toJson() => _$FeatureToJson(this);
-    
-    final String type;
-    final Geometry geometry;
-    final Properties properties;
-}
+  final List<County> counties;
 
-@JsonSerializable()
-class Features {
-
-Features({this.features,});
-
-  factory Features.fromJson(Map<String, dynamic> json) =>
-    _$FeaturesFromJson(json);
-Map<String, dynamic> toJson() => _$FeaturesToJson(this);
-
-final List<Feature> features;
-
-}
-
-Future<String> _loadMapAsset() async {
-  return await rootBundle.loadString('assets/GeoObs.json');
 }
 
 class Counties{
-  Features results;
+  Future<String> loadMapAsset() async {
+  return await rootBundle.loadString('assets/counties.json');
+  }
+
+  Locations results;
+
   getMapmarkers()async{
-  String stringJson = await _loadMapAsset();
+  String stringJson = await loadMapAsset();
   var jsonData = json.decode(stringJson);
-  results = new Features.fromJson(jsonData);
-  print("loading done printing length of files ..................................................................................................................................");
-  print(results.features.length);
+  results = new Locations.fromJson(jsonData);
+  print(results.counties[0].countyName);
   }
 
 }
