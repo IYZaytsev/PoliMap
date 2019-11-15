@@ -6,51 +6,42 @@ part of 'counties.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Geometry _$GeometryFromJson(Map<String, dynamic> json) {
-  return Geometry(
-      type: json['type'] as String,
-      coordinates: (json['coordinates'] as List)
-          ?.map(
-              (e) => (e as List)?.map((e) => (e as num)?.toDouble())?.toList())
-          ?.toList());
+LatLng $LatLngFromJson(Map<String, dynamic> json) {
+  return LatLng(
+    lat: (json['lat'] as num)?.toDouble(),
+    lng: (json['lng'] as num)?.toDouble(),
+  );
 }
 
-Map<String, dynamic> _$GeometryToJson(Geometry instance) => <String, dynamic>{
-      'type': instance.type,
-      'coordinates': instance.coordinates
+Map<String, dynamic> $LatLngToJson(LatLng instance) => <String, dynamic>{
+      'lat': instance.lat,
+      'lng': instance.lng,
     };
 
-Properties _$PropertiesFromJson(Map<String, dynamic> json) {
-  return Properties(county: json['county'] as String);
+County $CountyFromJson(Map<String, dynamic> json) {
+  return County(
+    countyName: json['countyName'] as String,
+    coordinates: (json['coordinates'] as List)
+        ?.map((e) =>
+            e == null ? null : LatLng.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+  );
 }
 
-Map<String, dynamic> _$PropertiesToJson(Properties instance) =>
-    <String, dynamic>{'county': instance.county};
-
-Feature _$FeatureFromJson(Map<String, dynamic> json) {
-  return Feature(
-      type: json['type'] as String,
-      geometry: json['geometry'] == null
-          ? null
-          : Geometry.fromJson(json['geometry'] as Map<String, dynamic>),
-      properties: json['properties'] == null
-          ? null
-          : Properties.fromJson(json['properties'] as Map<String, dynamic>));
-}
-
-Map<String, dynamic> _$FeatureToJson(Feature instance) => <String, dynamic>{
-      'type': instance.type,
-      'geometry': instance.geometry,
-      'properties': instance.properties
+Map<String, dynamic> $CountyToJson(County instance) => <String, dynamic>{
+      'countyName': instance.countyName,
+      'coordinates': instance.coordinates,
     };
 
-Features _$FeaturesFromJson(Map<String, dynamic> json) {
-  return Features(
-      features: (json['features'] as List)
-          ?.map((e) =>
-              e == null ? null : Feature.fromJson(e as Map<String, dynamic>))
-          ?.toList());
+Locations $LocationsFromJson(Map<String, dynamic> json) {
+  return Locations(
+    counties: (json['counties'] as List)
+        ?.map((e) =>
+            e == null ? null : County.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+  );
 }
 
-Map<String, dynamic> _$FeaturesToJson(Features instance) =>
-    <String, dynamic>{'features': instance.features};
+Map<String, dynamic> $LocationsToJson(Locations instance) => <String, dynamic>{
+      'counties': instance.counties,
+    };
