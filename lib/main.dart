@@ -64,7 +64,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        title: Text('Duke_Hack'),
+        title: Text('PoliMap'),
         backgroundColor: Colors.green[700],
       ),
       body: Stack(
