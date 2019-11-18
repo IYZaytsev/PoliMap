@@ -21,7 +21,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   double currentZoom = 0;
   LatLng visiableCenter;
-  String debugVariable = "Poli map";
+
   bool rayCrossesSegment(LatLng point, LatLng a, LatLng b) {
     const double infinity = 1.0 / 0.0;
     var px = point.longitude,
@@ -268,7 +268,7 @@ class _MyAppState extends State<MyApp> {
 
   LatLng _center = LatLng(0, 0);
   Set<Polygon> pset = Set();
-
+  List<LatLng> points = [];
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
   }
@@ -291,9 +291,6 @@ class _MyAppState extends State<MyApp> {
   void _onGeoChanged(CameraPosition position) {
     visiableCenter = position.target;
     currentZoom = position.zoom;
-    setState(() {
-      debugVariable = currentZoom.toString();
-    });
   }
 
   Widget initializeMap(LatLng _center) {
@@ -312,52 +309,76 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        title: Text(debugVariable),
+        title: Text("PoliMap"),
         backgroundColor: Colors.green[700],
       ),
       body: Stack(
         children: <Widget>[
-          FutureBuilder<LatLng>(
-            future: _getLocation(),
-            builder: (BuildContext context, AsyncSnapshot<LatLng> snapshot) {
-              switch (snapshot.connectionState) {
-                case ConnectionState.none:
-                  return Text("Tap to Start");
-                case ConnectionState.active:
-                case ConnectionState.waiting:
-                  return Container(
-                      color: Colors.lightBlue,
-                      child: Center(
-                        child: Loading(
-                            indicator: BallBeatIndicator(), size: 100.0),
-                      ));
-                case ConnectionState.done:
-                  if (snapshot.hasError)
-                    return Text('Error: ${snapshot.error}');
-
-                  return new GoogleMap(
-                    myLocationEnabled: true,
-                    myLocationButtonEnabled: true,
-                    polygons: Set<Polygon>.of(<Polygon>[
-                      Polygon(
-                          polygonId: PolygonId('area'),
-                          points: meklenburg,
+          FutureBuilder<counties.Locations>(
+              future: counties.Counties.getMapmarkers(),
+              builder: (BuildContext context,
+                  AsyncSnapshot<counties.Locations> snapshot) {
+                switch (snapshot.connectionState) {
+                  case ConnectionState.none:
+                  case ConnectionState.active:
+                  case ConnectionState.waiting:
+                    return Container(
+                        color: Colors.lightBlue,
+                        child: Center(
+                          child: Loading(
+                              indicator: BallBeatIndicator(), size: 100.0),
+                        ));
+                  case ConnectionState.done:
+                    for (final location in snapshot.data.counties) {
+                      List<LatLng> points = [];
+                      for (final p in location.coordinates) {
+                        points.add(LatLng(p.lat, p.lng));
+                      }
+                      Polygon polyGon = Polygon(
+                          polygonId: PolygonId(location.countyName),
+                          points: points,
                           geodesic: true,
                           strokeColor: Colors.blue,
                           fillColor: Colors.lightBlue.withOpacity(0.1),
-                          visible: true)
-                    ]),
-                    onMapCreated: _onMapCreated,
-                    initialCameraPosition: CameraPosition(
-                      target: snapshot.data,
-                      zoom: 11.0,
-                    ),
-                    onCameraMove: _onGeoChanged,
-                  );
-              }
-              return null; // unreachable
-            },
-          ),
+                          visible: true);
+                      pset.add(polyGon);
+                    }
+                    return FutureBuilder<LatLng>(
+                      future: _getLocation(),
+                      builder: (BuildContext context,
+                          AsyncSnapshot<LatLng> snapshot) {
+                        switch (snapshot.connectionState) {
+                          case ConnectionState.none:
+                            return Text("Tap to Start");
+                          case ConnectionState.active:
+                          case ConnectionState.waiting:
+                            return Container(
+                                color: Colors.lightBlue,
+                                child: Center(
+                                  child: Loading(
+                                      indicator: BallBeatIndicator(),
+                                      size: 100.0),
+                                ));
+                          case ConnectionState.done:
+                            if (snapshot.hasError)
+                              return Text('Error: ${snapshot.error}');
+                            return new GoogleMap(
+                              onMapCreated: _onMapCreated,
+                              myLocationEnabled: true,
+                              myLocationButtonEnabled: true,
+                              polygons: pset,
+                              initialCameraPosition: CameraPosition(
+                                target: snapshot.data,
+                                zoom: 11.0,
+                              ),
+                              onCameraMove: _onGeoChanged,
+                            );
+                        }
+                        return null; // unreachable
+                      },
+                    );
+                }
+              }),
           Padding(
               padding: const EdgeInsets.all(16.0),
               child: Align(
