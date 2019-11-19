@@ -20,8 +20,8 @@ class LatLng {
     this.lng,
   });
 
-  factory LatLng.fromJson(Map<String, dynamic> json) => $LatLngFromJson(json);
-  Map<String, dynamic> toJson() => $LatLngToJson(this);
+  factory LatLng.fromJson(Map<String, dynamic> json) => _$LatLngFromJson(json);
+  Map<String, dynamic> toJson() => _$LatLngToJson(this);
 
   final double lat;
   final double lng;
@@ -34,8 +34,8 @@ class County {
     this.coordinates,
   });
 
-  factory County.fromJson(Map<String, dynamic> json) => $CountyFromJson(json);
-  Map<String, dynamic> toJson() => $CountyToJson(this);
+  factory County.fromJson(Map<String, dynamic> json) => _$CountyFromJson(json);
+  Map<String, dynamic> toJson() => _$CountyToJson(this);
 
   final String countyName;
   final List<LatLng> coordinates;
@@ -49,8 +49,8 @@ class Locations {
   });
 
   factory Locations.fromJson(Map<String, dynamic> json) =>
-      $LocationsFromJson(json);
-  Map<String, dynamic> toJson() => $LocationsToJson(this);
+      _$LocationsFromJson(json);
+  Map<String, dynamic> toJson() => _$LocationsToJson(this);
 
   final List<County> counties;
 

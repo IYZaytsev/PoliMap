@@ -1,0 +1,629 @@
+{
+    "elections": [
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MATTHEWS MAYOR",
+            "name": "Paul Bailey"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MATTHEWS MAYOR",
+            "name": "John Higdon"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MATTHEWS MAYOR",
+            "name": "Jason Majewski"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "US HOUSE OF REPRESENTATIVES DISTRICT 09",
+            "name": "Dan McCready"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "US HOUSE OF REPRESENTATIVES DISTRICT 09",
+            "name": "Jeff Scott"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "US HOUSE OF REPRESENTATIVES DISTRICT 09",
+            "name": "Allen Smith"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "US HOUSE OF REPRESENTATIVES DISTRICT 09",
+            "name": "Dan Bishop"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "US HOUSE OF REPRESENTATIVES DISTRICT 09",
+            "name": "Stevie Rivenbark Hull"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "US HOUSE OF REPRESENTATIVES DISTRICT 09",
+            "name": "Matthew Ridenhour"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "US HOUSE OF REPRESENTATIVES DISTRICT 09",
+            "name": "Stony Rushing"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "US HOUSE OF REPRESENTATIVES DISTRICT 09",
+            "name": "Fern Shubert"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "US HOUSE OF REPRESENTATIVES DISTRICT 09",
+            "name": "Albert Lee Wiley, Jr."
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "US HOUSE OF REPRESENTATIVES DISTRICT 09",
+            "name": "Chris Anglin"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "US HOUSE OF REPRESENTATIVES DISTRICT 09",
+            "name": "Dan Bishop"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "US HOUSE OF REPRESENTATIVES DISTRICT 09",
+            "name": "Leigh Thomas Brown"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "US HOUSE OF REPRESENTATIVES DISTRICT 09",
+            "name": "Kathie C. Day"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "US HOUSE OF REPRESENTATIVES DISTRICT 09",
+            "name": "Gary Dunn"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE MAYOR",
+            "name": "Roderick Davis"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE MAYOR",
+            "name": "Vi Lyles"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE MAYOR",
+            "name": "Tigress Sydney Acute McDaniel"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE MAYOR",
+            "name": "Joel Odom"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE MAYOR",
+            "name": "Lucille Puckett"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL AT-LARGE",
+            "name": "Dimple Ajmera"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL AT-LARGE",
+            "name": "Julie Eiselt"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL AT-LARGE",
+            "name": "Jorge Millares"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL AT-LARGE",
+            "name": "James (Smuggie) Mitchell"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL AT-LARGE",
+            "name": "LaWana Slack-Mayfield"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL AT-LARGE",
+            "name": "Chad Stachowicz"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL AT-LARGE",
+            "name": "Braxton David Winston II"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 01",
+            "name": "Larken Egleston"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 01",
+            "name": "Sean Smith"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 02",
+            "name": "Jeremy Arey"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 02",
+            "name": "Jessica C. Davis"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 02",
+            "name": "Malcolm Graham"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 02",
+            "name": "Antoinette (Toni) Green"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 03",
+            "name": "Terry Brown"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 03",
+            "name": "Caleb Theodros"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 03",
+            "name": "Victoria Watlington"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 04",
+            "name": "Richmond V. Baker"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 04",
+            "name": "Gabriel (Gabe) Cartagena"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 04",
+            "name": "Charlene Henderson El"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 04",
+            "name": "Renee Perkins Johnson"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 04",
+            "name": "Charles Robinson"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 04",
+            "name": "Sean Thompson"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 05",
+            "name": "Matt Newton"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 05",
+            "name": "Vinroy Washington Reid"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 05",
+            "name": "Mark L. Vincent"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 07",
+            "name": "Ed Driggs"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 07",
+            "name": "Victoria Nwasike"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE MAYOR",
+            "name": "David Michael Rice"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL AT-LARGE",
+            "name": "Joshua Richardson"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 02",
+            "name": "Jacob Robinson"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 04",
+            "name": "Brandon Pierce"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 06",
+            "name": "Tariq Scott Bokhari"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CITY OF CHARLOTTE CITY COUNCIL DISTRICT 06",
+            "name": "Gina Navarrete"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CHARLOTTE-MECKLENBURG SCHOOLS BOARD OF EDUCATION AT-LARGE",
+            "name": "Annette Albright"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CHARLOTTE-MECKLENBURG SCHOOLS BOARD OF EDUCATION AT-LARGE",
+            "name": "Elyse Dashew"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CHARLOTTE-MECKLENBURG SCHOOLS BOARD OF EDUCATION AT-LARGE",
+            "name": "Jennifer De La Jara"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CHARLOTTE-MECKLENBURG SCHOOLS BOARD OF EDUCATION AT-LARGE",
+            "name": "Gregory R. Denlea"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CHARLOTTE-MECKLENBURG SCHOOLS BOARD OF EDUCATION AT-LARGE",
+            "name": "Jenna Moorehead"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CHARLOTTE-MECKLENBURG SCHOOLS BOARD OF EDUCATION AT-LARGE",
+            "name": "Donna J. Parker-Tate"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CHARLOTTE-MECKLENBURG SCHOOLS BOARD OF EDUCATION AT-LARGE",
+            "name": "Jordan Pineda"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CHARLOTTE-MECKLENBURG SCHOOLS BOARD OF EDUCATION AT-LARGE",
+            "name": "Olivia Scott"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CHARLOTTE-MECKLENBURG SCHOOLS BOARD OF EDUCATION AT-LARGE",
+            "name": "Lenora Shipp"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CHARLOTTE-MECKLENBURG SCHOOLS BOARD OF EDUCATION AT-LARGE",
+            "name": "Stephanie M. Sneed"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CHARLOTTE-MECKLENBURG SCHOOLS BOARD OF EDUCATION AT-LARGE",
+            "name": "Duncan St. Clair"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CHARLOTTE-MECKLENBURG SCHOOLS BOARD OF EDUCATION AT-LARGE",
+            "name": "Queen Thompson"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "CHARLOTTE-MECKLENBURG SCHOOLS BOARD OF EDUCATION AT-LARGE",
+            "name": "Monty Witherspoon"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF CORNELIUS MAYOR",
+            "name": "Woody Washam, Jr."
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF CORNELIUS BOARD OF COMMISSIONERS",
+            "name": "Denis P. Bilodeau"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF CORNELIUS BOARD OF COMMISSIONERS",
+            "name": "Ava Callender"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF CORNELIUS BOARD OF COMMISSIONERS",
+            "name": "Jim Duke"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF CORNELIUS BOARD OF COMMISSIONERS",
+            "name": "Dave Gilroy"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF CORNELIUS BOARD OF COMMISSIONERS",
+            "name": "Diane Gilroy"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF CORNELIUS BOARD OF COMMISSIONERS",
+            "name": "Michael (Mike) Miltich"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF CORNELIUS BOARD OF COMMISSIONERS",
+            "name": "Thurman Ross, Jr."
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF CORNELIUS BOARD OF COMMISSIONERS",
+            "name": "Tricia Sisson"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF DAVIDSON MAYOR",
+            "name": "Russell B. (Rusty) Knox, Jr."
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF DAVIDSON BOARD OF COMMISSIONERS",
+            "name": "Jane Campbell"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF DAVIDSON BOARD OF COMMISSIONERS",
+            "name": "Steve Cook"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF DAVIDSON BOARD OF COMMISSIONERS",
+            "name": "Matthew Fort"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF DAVIDSON BOARD OF COMMISSIONERS",
+            "name": "Jim Fuller"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF DAVIDSON BOARD OF COMMISSIONERS",
+            "name": "Autumn Rierson Michael"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF DAVIDSON BOARD OF COMMISSIONERS",
+            "name": "David Sitton"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF DAVIDSON BOARD OF COMMISSIONERS",
+            "name": "John Stroup"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF HUNTERSVILLE MAYOR",
+            "name": "John Aneralla"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF HUNTERSVILLE MAYOR",
+            "name": "Rob Kidwell"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF HUNTERSVILLE BOARD OF COMMISSIONERS",
+            "name": "Melinda Bales"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF HUNTERSVILLE BOARD OF COMMISSIONERS",
+            "name": "Dan Boone"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF HUNTERSVILLE BOARD OF COMMISSIONERS",
+            "name": "Jenn Davis"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF HUNTERSVILLE BOARD OF COMMISSIONERS",
+            "name": "Brian Hines"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF HUNTERSVILLE BOARD OF COMMISSIONERS",
+            "name": "Lance Munger"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF HUNTERSVILLE BOARD OF COMMISSIONERS",
+            "name": "Derek Partee"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF HUNTERSVILLE BOARD OF COMMISSIONERS",
+            "name": "Stacy Phillips"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF HUNTERSVILLE BOARD OF COMMISSIONERS",
+            "name": "Joe Sailers"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF HUNTERSVILLE BOARD OF COMMISSIONERS",
+            "name": "Nick Walsh"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MATTHEWS BOARD OF COMMISSIONERS",
+            "name": "Ben Bash"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MATTHEWS BOARD OF COMMISSIONERS",
+            "name": "Dave Bland"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MATTHEWS BOARD OF COMMISSIONERS",
+            "name": "Allen Crosby"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MATTHEWS BOARD OF COMMISSIONERS",
+            "name": "Barbara Dement"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MATTHEWS BOARD OF COMMISSIONERS",
+            "name": "Renee Garner"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MATTHEWS BOARD OF COMMISSIONERS",
+            "name": "Gina Hoover"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MATTHEWS BOARD OF COMMISSIONERS",
+            "name": "Ken McCool"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MATTHEWS BOARD OF COMMISSIONERS",
+            "name": "Jeff A. Miller"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MATTHEWS BOARD OF COMMISSIONERS",
+            "name": "Mark Tofano"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MATTHEWS BOARD OF COMMISSIONERS",
+            "name": "John R. Urban"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MATTHEWS BOARD OF COMMISSIONERS",
+            "name": "Larry Whitley"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MINT HILL MAYOR",
+            "name": "Richard (Fig) Newton"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MINT HILL MAYOR",
+            "name": "Brad A. Simmons"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MINT HILL MAYOR",
+            "name": "Karen Harvey Trauner"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MINT HILL BOARD OF COMMISSIONERS",
+            "name": "Beverly Cannaday"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MINT HILL BOARD OF COMMISSIONERS",
+            "name": "Richard M. Cochrane"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MINT HILL BOARD OF COMMISSIONERS",
+            "name": "Dale Dalton"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MINT HILL BOARD OF COMMISSIONERS",
+            "name": "Jessi Healey"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MINT HILL BOARD OF COMMISSIONERS",
+            "name": "Patrick Holton"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF MINT HILL BOARD OF COMMISSIONERS",
+            "name": "Tony Long"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF PINEVILLE MAYOR",
+            "name": "John (Jack) Edwards"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF PINEVILLE TOWN COUNCIL",
+            "name": "L.R. (Les) Gladden"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF PINEVILLE TOWN COUNCIL",
+            "name": "Bolyn McClung"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF PINEVILLE TOWN COUNCIL",
+            "name": "Christopher C. McDonough"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF PINEVILLE TOWN COUNCIL",
+            "name": "Amelia Stinson-Wesley"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF STALLINGS COUNCIL DISTRICT 04",
+            "name": "Heather Grooms"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF STALLINGS COUNCIL DISTRICT 04",
+            "name": "Shawna Steele"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF STALLINGS COUNCIL DISTRICT 05",
+            "name": "Steven Ayers"
+        },
+        {
+            "county": "MECKLENBURG",
+            "position": "TOWN OF STALLINGS COUNCIL DISTRICT 05",
+            "name": "Billy Birt, Jr."
+        }
+    ]
+}

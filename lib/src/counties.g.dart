@@ -6,19 +6,19 @@ part of 'counties.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-LatLng $LatLngFromJson(Map<String, dynamic> json) {
+LatLng _$LatLngFromJson(Map<String, dynamic> json) {
   return LatLng(
     lat: (json['lat'] as num)?.toDouble(),
     lng: (json['lng'] as num)?.toDouble(),
   );
 }
 
-Map<String, dynamic> $LatLngToJson(LatLng instance) => <String, dynamic>{
+Map<String, dynamic> _$LatLngToJson(LatLng instance) => <String, dynamic>{
       'lat': instance.lat,
       'lng': instance.lng,
     };
 
-County $CountyFromJson(Map<String, dynamic> json) {
+County _$CountyFromJson(Map<String, dynamic> json) {
   return County(
     countyName: json['countyName'] as String,
     coordinates: (json['coordinates'] as List)
@@ -28,12 +28,12 @@ County $CountyFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> $CountyToJson(County instance) => <String, dynamic>{
+Map<String, dynamic> _$CountyToJson(County instance) => <String, dynamic>{
       'countyName': instance.countyName,
       'coordinates': instance.coordinates,
     };
 
-Locations $LocationsFromJson(Map<String, dynamic> json) {
+Locations _$LocationsFromJson(Map<String, dynamic> json) {
   return Locations(
     counties: (json['counties'] as List)
         ?.map((e) =>
@@ -42,6 +42,6 @@ Locations $LocationsFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> $LocationsToJson(Locations instance) => <String, dynamic>{
+Map<String, dynamic> _$LocationsToJson(Locations instance) => <String, dynamic>{
       'counties': instance.counties,
     };
