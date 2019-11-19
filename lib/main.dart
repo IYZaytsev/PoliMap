@@ -7,10 +7,12 @@ import 'package:loading/loading.dart';
 import 'src/counties.dart' as counties;
 import 'src/candidates.dart' as candidates;
 import 'dart:async' show Future;
+import 'package:async/async.dart';
 
 void main() => runApp(new MaterialApp(home: new MyApp()));
 
-enum Answer{YES,NO,MAYBE}
+enum Answer { YES, NO, MAYBE }
+
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
@@ -19,38 +21,36 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   double currentZoom = 0;
   LatLng visiableCenter;
-
+  String govScope = "";
   String _answer = "";
-  void setAnswer(String value){
+  void setAnswer(String value) {
     setState(() {
       _answer = value;
     });
   }
 
-Future<Null> _askUser(BuildContext context) async{
-  switch(await showDialog(
-    context: context,
-    child: new SimpleDialog(
-      title: Text("test"),
-      children: <Widget>[
-        new SimpleDialogOption(
-          onPressed: (){Navigator.pop(context,Answer.YES);},
-          child: const Text("Yes"),
-        )
-      ],
-
-    )
-  ))
-  {
-    case Answer.YES:
-    setAnswer('Yes');
-    break;
+  Future<Null> _askUser(BuildContext context) async {
+    switch (await showDialog(
+        context: context,
+        child: new SimpleDialog(
+          title: Text("test"),
+          children: <Widget>[
+            new SimpleDialogOption(
+              onPressed: () {
+                Navigator.pop(context, Answer.YES);
+              },
+              child: const Text("Yes"),
+            )
+          ],
+        ))) {
+      case Answer.YES:
+        setAnswer('Yes');
+        break;
+    }
   }
- 
 
-}
-
-
+  final AsyncMemoizer _memoizer = AsyncMemoizer();
+  final AsyncMemoizer _memoizer2 = AsyncMemoizer();
   GoogleMapController mapController;
   LatLng _center = LatLng(0, 0);
   Set<Polygon> pset = Set();
@@ -75,10 +75,28 @@ Future<Null> _askUser(BuildContext context) async{
   }
 
   void _onGeoChanged(CameraPosition position) {
-    visiableCenter = position.target;
-    currentZoom = position.zoom;
-  }
+    setState(() {
+      visiableCenter = position.target;
+      currentZoom = position.zoom;
+      if (currentZoom > 11) {
+        setState(() {
+          govScope = "City";
+        });
+      }
 
+      if (currentZoom > 9  && currentZoom < 11) {
+        setState(() {
+          govScope = "County";
+        });
+      }
+
+      if (currentZoom < 9) {
+        setState(() {
+          govScope = "State";
+        });
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -90,10 +108,9 @@ Future<Null> _askUser(BuildContext context) async{
       ),
       body: Stack(
         children: <Widget>[
-          FutureBuilder<counties.Locations>(
-              future: counties.Counties.getMapmarkers(),
-              builder: (BuildContext context,
-                  AsyncSnapshot<counties.Locations> snapshot) {
+          FutureBuilder(
+              future: this._getMapMarkerMemorize(),
+              builder: (BuildContext context, snapshot) {
                 switch (snapshot.connectionState) {
                   case ConnectionState.none:
                   case ConnectionState.active:
@@ -119,10 +136,9 @@ Future<Null> _askUser(BuildContext context) async{
                           visible: true);
                       pset.add(polyGon);
                     }
-                    return FutureBuilder<LatLng>(
-                      future: _getLocation(),
-                      builder: (BuildContext context,
-                          AsyncSnapshot<LatLng> snapshot) {
+                    return FutureBuilder(
+                      future: this._getLocationMemorize(),
+                      builder: (BuildContext context, snapshot) {
                         switch (snapshot.connectionState) {
                           case ConnectionState.none:
                             return Text("Tap to Start");
@@ -159,13 +175,38 @@ Future<Null> _askUser(BuildContext context) async{
               padding: const EdgeInsets.all(16.0),
               child: Align(
                   alignment: Alignment.bottomLeft,
-                  child: FloatingActionButton(
-                    onPressed: () {
-                    _askUser(context);
-                    },
-                  ))),
+                  child: Container(
+                      width: 400.0,
+                      height: 100.0,
+                      child: new MaterialButton(
+                        shape: new RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        color: Colors.blue,
+                        child: Text(
+                          govScope,
+                          textScaleFactor: 5,
+                        ),
+                        onPressed: () {
+                          _askUser(context);
+                        },
+                      )))),
         ],
       ),
     ));
+  }
+
+  _getLocationMemorize() {
+    return this._memoizer.runOnce(() async {
+      LatLng intialPosition = await _getLocation();
+      return intialPosition;
+    });
+  }
+
+  _getMapMarkerMemorize() {
+    return this._memoizer2.runOnce(() async {
+      counties.Locations countyLines = await counties.Counties.getMapmarkers();
+      return countyLines;
+    });
   }
 }
