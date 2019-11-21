@@ -20,6 +20,9 @@ class Candidates {
     this.county,
     this.position,
     this.name,
+    this.lat,
+    this.lng,
+    this.city
   });
 
   factory Candidates.fromJson(Map<String, dynamic> json) => _$CandidatesFromJson(json);
@@ -28,6 +31,9 @@ class Candidates {
   final String county;
   final String position;
   final String name;
+  final double lat;
+  final double lng;
+  final String city;
 
 }
 
@@ -55,6 +61,7 @@ class  JsonLoader{
 
   static Future<CurrentRunning> getMapmarkers()async{
   String stringJson = await loadMapAsset();
+  print(stringJson);
   var jsonData = json.decode(stringJson);
   results = new CurrentRunning.fromJson(jsonData);
   print(results.elections[0].name);

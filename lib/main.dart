@@ -1,8 +1,9 @@
 import "dart:core";
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:hackduke_app/mapHelper.dart';
+import 'package:hackduke_app/navBar.dart';
 import 'package:loading/indicator/ball_beat_indicator.dart';
-import 'package:location/location.dart';
 import 'package:loading/loading.dart';
 import 'src/counties.dart' as counties;
 import 'src/candidates.dart' as candidates;
@@ -19,82 +20,111 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  List<Marker> allmapMarkers = [];
+  List<Marker> mapMarkers = [];
+  List<Polygon> plist = [];
   double currentZoom = 0;
   LatLng visiableCenter;
-  String govScope = "";
   String _answer = "";
+  final AsyncMemoizer _memoizer = AsyncMemoizer();
+  GoogleMapController mapController;
+  LatLng userLocation = LatLng(0, 0);
+
   void setAnswer(String value) {
     setState(() {
       _answer = value;
     });
   }
 
-  Future<Null> _askUser(BuildContext context) async {
-    switch (await showDialog(
-        context: context,
-        child: new SimpleDialog(
-          title: Text("test"),
-          children: <Widget>[
-            new SimpleDialogOption(
-              onPressed: () {
-                Navigator.pop(context, Answer.YES);
-              },
-              child: const Text("Yes"),
-            )
-          ],
-        ))) {
-      case Answer.YES:
-        setAnswer('Yes');
-        break;
+  //Gets passed a value and
+  void updateMapMarker(String value) {
+    mapMarkers.clear();
+    for (final marks in allmapMarkers) {
+      if (marks.infoWindow.snippet == value) {
+        mapMarkers.add(marks);
+
+      }
     }
+    setState(() {});
   }
 
-  final AsyncMemoizer _memoizer = AsyncMemoizer();
-  final AsyncMemoizer _memoizer2 = AsyncMemoizer();
-  GoogleMapController mapController;
-  LatLng _center = LatLng(0, 0);
-  Set<Polygon> pset = Set();
-  List<LatLng> points = [];
+  Future<Null> _askUser(BuildContext context) async {
+    candidates.CurrentRunning meck =
+        await candidates.JsonLoader.getMapmarkers();
+    for (final person in meck.elections) {
+      final marker = Marker(
+          consumeTapEvents: false,
+          markerId: MarkerId(person.name),
+          position: LatLng(person.lat, person.lng),
+          infoWindow: InfoWindow(
+            title: person.name,
+            snippet: person.position,
+          ));
+      allmapMarkers.add(marker);
+    }
+
+    List<Widget> listofPositionWidgets = [];
+    List<String> listOfPosition = [];
+    for (final person in meck.elections) {
+      if (listOfPosition.contains(person.position)) {
+        continue;
+      } else {
+        listOfPosition.add(person.position);
+      }
+    }
+    for (final position in listOfPosition) {
+      listofPositionWidgets.add(SimpleDialogOption(
+        child: Text(position),
+        onPressed: () {
+          updateMapMarker(position);
+          Navigator.pop(context);
+        },
+      ));
+    }
+    await showDialog(
+        context: context,
+        child: new SimpleDialog(
+          title: Text("Positions"),
+          children: listofPositionWidgets,
+        ));
+  }
+
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
   }
 
-  Future<LatLng> _getLocation() async {
-    LocationData currentLocation;
-
-    var location = new Location();
-    try {
-      currentLocation = await location.getLocation();
-
-      _center = LatLng(currentLocation.latitude, currentLocation.longitude);
-      return LatLng(currentLocation.latitude, currentLocation.longitude);
-    } on Exception {
-      currentLocation = null;
+  //takes the result from the call back functino From NavBar.dart and rebuilds the map
+  void _mapRefresh(String s) {
+    switch (s) {
+      case "City":
+        {
+          mapController.animateCamera(CameraUpdate.newCameraPosition(
+              CameraPosition(target: userLocation, zoom: 11)));
+          _askUser(context);
+        }
+        break;
+      case "County":
+        {
+          mapController.animateCamera(CameraUpdate.newCameraPosition(
+              CameraPosition(target: userLocation, zoom: 9)));
+          _askUser(context);
+        }
+        break;
+      case "State":
+        {
+          mapController.animateCamera(CameraUpdate.newCameraPosition(
+              CameraPosition(target: userLocation, zoom: 8)));
+          _askUser(context);
+        }
+        break;
     }
-    return LatLng(currentLocation.latitude, currentLocation.longitude);
   }
 
-  void _onGeoChanged(CameraPosition position) {
+//When the camera is moved this function fires and updates global variables for use in calculations
+  Future<void> _onGeoChanged(CameraPosition position) async {
     setState(() {
       visiableCenter = position.target;
       currentZoom = position.zoom;
-      if (currentZoom > 11) {
-        setState(() {
-          govScope = "City";
-        });
-      }
-
-      if (currentZoom > 9  && currentZoom < 11) {
-        setState(() {
-          govScope = "County";
-        });
-      }
-
-      if (currentZoom < 9) {
-        setState(() {
-          govScope = "State";
-        });
-      }
     });
   }
 
@@ -104,109 +134,83 @@ class _MyAppState extends State<MyApp> {
         home: Scaffold(
       appBar: AppBar(
         title: Text("PoliMap"),
-        backgroundColor: Colors.green[700],
+        backgroundColor: Colors.red[500],
       ),
+      bottomNavigationBar: NavBar(_mapRefresh),
       body: Stack(
         children: <Widget>[
           FutureBuilder(
-              future: this._getMapMarkerMemorize(),
+              future: this._getLocationMemorize(),
               builder: (BuildContext context, snapshot) {
                 switch (snapshot.connectionState) {
                   case ConnectionState.none:
                   case ConnectionState.active:
                   case ConnectionState.waiting:
                     return Container(
-                        color: Colors.lightBlue,
+                        color: Colors.red[500],
                         child: Center(
                           child: Loading(
                               indicator: BallBeatIndicator(), size: 100.0),
                         ));
                   case ConnectionState.done:
-                    for (final location in snapshot.data.counties) {
-                      List<LatLng> points = [];
-                      for (final p in location.coordinates) {
-                        points.add(LatLng(p.lat, p.lng));
-                      }
-                      Polygon polyGon = Polygon(
-                          polygonId: PolygonId(location.countyName),
-                          points: points,
-                          geodesic: true,
-                          strokeColor: Colors.blue,
-                          fillColor: Colors.lightBlue.withOpacity(0.1),
-                          visible: true);
-                      pset.add(polyGon);
-                    }
-                    return FutureBuilder(
-                      future: this._getLocationMemorize(),
-                      builder: (BuildContext context, snapshot) {
-                        switch (snapshot.connectionState) {
-                          case ConnectionState.none:
-                            return Text("Tap to Start");
-                          case ConnectionState.active:
-                          case ConnectionState.waiting:
-                            return Container(
-                                color: Colors.lightBlue,
-                                child: Center(
-                                  child: Loading(
-                                      indicator: BallBeatIndicator(),
-                                      size: 100.0),
-                                ));
-                          case ConnectionState.done:
-                            if (snapshot.hasError)
-                              return Text('Error: ${snapshot.error}');
-                            return new GoogleMap(
-                              onMapCreated: _onMapCreated,
-                              myLocationEnabled: true,
-                              myLocationButtonEnabled: true,
-                              polygons: pset,
-                              initialCameraPosition: CameraPosition(
-                                target: snapshot.data,
-                                zoom: 11.0,
-                              ),
-                              onCameraMove: _onGeoChanged,
-                            );
-                        }
-                        return null; // unreachable
-                      },
+                    return new GoogleMap(
+                      onMapCreated: _onMapCreated,
+                      markers: mapMarkers.toSet(),
+                      myLocationEnabled: true,
+                      myLocationButtonEnabled: true,
+                      mapToolbarEnabled: false,
+                      polygons: plist.toSet(),
+                      initialCameraPosition: CameraPosition(
+                        target: userLocation,
+                        zoom: 11.0,
+                      ),
+                      onCameraMove: _onGeoChanged,
                     );
                 }
-              }),
-          Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Container(
-                      width: 400.0,
-                      height: 100.0,
-                      child: new MaterialButton(
-                        shape: new RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        color: Colors.blue,
-                        child: Text(
-                          govScope,
-                          textScaleFactor: 5,
-                        ),
-                        onPressed: () {
-                          _askUser(context);
-                        },
-                      )))),
+              })
         ],
       ),
     ));
   }
 
-  _getLocationMemorize() {
-    return this._memoizer.runOnce(() async {
-      LatLng intialPosition = await _getLocation();
-      return intialPosition;
-    });
+  //loads in the Json and gets location data of user
+  Future<void> _loadInAssets() async {
+    counties.Locations countyLines = await counties.Counties.getMapmarkers();
+    //loads in countyLines and converts to a polygon set
+    for (final location in countyLines.counties) {
+      List<LatLng> points = [];
+      for (final p in location.coordinates) {
+        points.add(LatLng(p.lat, p.lng));
+      }
+      Polygon polyGon = Polygon(
+          polygonId: PolygonId(location.countyName),
+          points: points,
+          geodesic: true,
+          strokeColor: Colors.blue,
+          fillColor: Colors.lightBlue.withOpacity(0.1),
+          visible: false);
+      plist.add(polyGon);
+    }
   }
 
-  _getMapMarkerMemorize() {
-    return this._memoizer2.runOnce(() async {
-      counties.Locations countyLines = await counties.Counties.getMapmarkers();
-      return countyLines;
+  //Map loads faster than flutter can get GPS coordinates, so it has to be have priority, Getting
+  //User location is only takes long on startup for some reason, otherwise it updates fast.
+  // it also figure out what county you are in and displays it accordingly
+  _getLocationMemorize() {
+    return this._memoizer.runOnce(() async {
+      await _loadInAssets();
+      LatLng intialPosition = await MapMath.getLocation();
+      userLocation = intialPosition;
+      int index = MapMath.whichCounty(plist, intialPosition);
+      plist[index] = Polygon(
+          polygonId: plist[index].polygonId,
+          points: plist[index].points,
+          geodesic: true,
+          strokeColor: Colors.blue,
+          fillColor: Colors.lightBlue.withOpacity(0.1),
+          visible: true);
+      setState(() {});
+      return intialPosition;
     });
   }
 }

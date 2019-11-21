@@ -11,6 +11,9 @@ Candidates _$CandidatesFromJson(Map<String, dynamic> json) {
     county: json['county'] as String,
     position: json['position'] as String,
     name: json['name'] as String,
+    lat: (json['lat'] as num)?.toDouble(),
+    lng: (json['lng'] as num)?.toDouble(),
+    city: json['city'] as String,
   );
 }
 
@@ -19,6 +22,9 @@ Map<String, dynamic> _$CandidatesToJson(Candidates instance) =>
       'county': instance.county,
       'position': instance.position,
       'name': instance.name,
+      'lat': instance.lat,
+      'lng': instance.lng,
+      'city': instance.city,
     };
 
 CurrentRunning _$CurrentRunningFromJson(Map<String, dynamic> json) {
