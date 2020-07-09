@@ -3,7 +3,7 @@
 This is an idea I had for a hackathon at Duke
 
 <p align="center">
-  <img src="Screenshot from 2019-12-01 20-18-52.png">
+  <img src="polimap.jpg">
 </p>
 
 ## Concept
