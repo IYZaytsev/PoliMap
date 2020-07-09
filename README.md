@@ -3,7 +3,7 @@
 This is an idea I had for a hackathon at Duke
 
 <p align="center">
-  <img src="polimap.jpg">
+  <img src="polimap_smaller.jpg">
 </p>
 
 ## Concept
